@@ -1,7 +1,12 @@
-console.log('Hi there!');
+const fetchData = async () => {
+  const response = await axios.get('http://www.omdbapi.com/', {
+    params: {
+      apiKey: 'f65f8f02',
+      s: 'avengers',
+    },
+  });
 
-const add = (num1, num2) => {
-  return num1 + num2;
+  console.log(response.data);
 };
 
-console.log(add(5, 6));
+fetchData();
